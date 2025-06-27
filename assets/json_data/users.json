@@ -1,0 +1,27 @@
+{
+  "_id": {
+    "$oid": "681e7fa23150e641dc9cd8a4"
+  },
+  "email": "ben@dotjock.com",
+  "username": "ben@dotjock.com",
+  "displayName": "Ben Turner",
+  "photoUrl": "",
+  "email_verified": true,
+  "phone_number": "303-802-6093",
+  "phone_verified": false,
+  "date_signup": 1746829308,
+  "company_name": "Dotjock LLC",
+  "address_1": "610 S Public Rd, #50",
+  "address_2": "",
+  "city": "Lafayette",
+  "state_code": "CO",
+  "zip": "80026",
+  "country_code": "US",
+  "billing_address_1": "610 S Public Rd, #50",
+  "billing_address_2": "",
+  "billing_city": "Lafayette",
+  "billing_state_code": "CO",
+  "billing_zip": "80026",
+  "billing_country_code": "US",
+  "tos_accepted": true
+}

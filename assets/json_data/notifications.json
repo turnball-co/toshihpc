@@ -1,0 +1,12 @@
+{
+  "user_id": "681e7fa23150e641dc9cd8a4",
+  "title": "Your Payment was Declined",
+  "contents": "Your recent transaction for SKU: monthly_gpu32_mem512_hdd16tb using your Visa you provided was declined due to insufficient funds.",
+  "order_id": "681e8d623150e641dc9cd9f7",
+  "date_notified": 1746832005,
+  "consumed": {
+    "read": false,
+    "removed": false,
+    "seen": false
+  }
+}

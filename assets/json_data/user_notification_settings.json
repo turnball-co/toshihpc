@@ -1,0 +1,12 @@
+{
+  "user_id": "681e7fa23150e641dc9cd8a4",
+  "date_set": 1746832005,
+  "flags": {
+    "email": true,
+    "text": true,
+    "promotional": true,
+    "sales": true,
+    "updates": true,
+    "account": true
+  }
+}

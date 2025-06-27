@@ -1,0 +1,10 @@
+module.exports = {
+  expo: {
+    name: 'toshihpc',
+    scheme: 'toshihpc',
+    web: {
+      bundler: 'metro',
+      browserPolyfills: ['window']
+    }
+  }
+}

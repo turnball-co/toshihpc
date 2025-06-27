@@ -1,0 +1,12 @@
+Subject: Your order for %%PRODUCT_NAME%% has successfully been created.
+
+Congratulations!  Your new instance of %%PRODUCT_NAME%% has been provisioned and is now ready for your use!
+
+You are now ready to join the fans of Artificial Intelligence.  You may visit our Help Center at %%DOMAIN_NAME%%/help-center to see what new functionality is now available for your immediate uses.
+
+Please let us know if you have any difficulty with your newly provisioned capacity and we look forward to assisting you in achieving your AI needs now and into the future!
+
+Best Regards,
+
+The %%DOMAIN_NAME%% Team
+

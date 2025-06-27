@@ -1,0 +1,14 @@
+{
+  "transaction_id": "",
+  "user_id": "681e7fa23150e641dc9cd8a4",
+  "amount": 199.99,
+  "currency": "usd",
+  "date_ordered": 1746832005,
+  "term": "monthly",
+  "product_sku": "monthly_gpu32_mem512_hdd16tb",
+  "transaction_status": "failed",
+  "card_brand": "Visa",
+  "response_code": "card_declined",
+  "response_message": "insufficient funds",
+  "deployed": false
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "1 GPU, 16GB Memory, 512GB Disk",
+    "product_sku": "monthly_gpu1_mem16_hdd512gb",
+    "product_term": "monthly",
+    "product_price": 59.99,
+    "provision_script": "creaet_instance.sh",
+    "product_active": true,
+    "product_spec": {
+      "GPU": 1,
+      "RAM": "16GB",
+      "HDD": "512GB"
+    }
+  },
+  {
+    "product_name": "2 GPU, 32GB Memory, 1TB Disk",
+    "product_sku": "monthly_gpu2_mem32_hdd1tb",
+    "product_term": "monthly",
+    "product_price": 79.99,
+    "provision_script": "creaet_instance.sh",
+    "product_active": true,
+    "product_spec": {
+      "GPU": 2,
+      "RAM": "32GB",
+      "HDD": "1TB"
+    }
+  },
+  {
+    "product_name": "4 GPU, 64GB Memory, 2TB Disk",
+    "product_sku": "monthly_gpu4_mem64_hdd2tb",
+    "product_term": "monthly",
+    "product_price": 99.99,
+    "provision_script": "creaet_instance.sh",
+    "product_active": true,
+    "product_spec": {
+      "GPU": 4,
+      "RAM": "64GB",
+      "HDD": "2TB"
+    }
+  },
+  {
+    "product_name": "8 GPU, 128GB Memory, 4TB Disk",
+    "product_sku": "monthly_gpu8_mem128_hdd4tb",
+    "product_term": "monthly",
+    "product_price": 129.99,
+    "provision_script": "creaet_instance.sh",
+    "product_active": true,
+    "product_spec": {
+      "GPU": 8,
+      "RAM": "128GB",
+      "HDD": "4TB"
+    }
+  },
+  {
+    "product_name": "16 GPU, 256GB Memory, 8TB Disk",
+    "product_sku": "monthly_gpu16_mem256_hdd8tb",
+    "product_term": "monthly",
+    "product_price": 149.99,
+    "provision_script": "creaet_instance.sh",
+    "product_active": true,
+    "product_spec": {
+      "GPU": 16,
+      "RAM": "256GB",
+      "HDD": "8TB"
+    }
+  },
+  {
+    "product_name": "32 GPU, 512GB Memory, 16TB Disk",
+    "product_sku": "monthly_gpu32_mem512_hdd16tb",
+    "product_term": "monthly",
+    "product_price": 199.99,
+    "provision_script": "creaet_instance.sh",
+    "product_active": true,
+    "product_spec": {
+      "GPU": 32,
+      "RAM": "512GB",
+      "HDD": "16TB"
+    }
+  }
+]
