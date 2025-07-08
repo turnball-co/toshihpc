@@ -28,11 +28,33 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "backgroundImage": "./assets/images/swirl.png",
+          "image": "/assets/images/splash-icon.png",
+          "backgroundImage": "/assets/images/swirl.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-asset",
+        {
+          "assets": [
+            "./assets/images/swirl.p sng",
+            "./assets/images/logo/light-chevron.png",
+            "./assets/images/logo/light-chevron_1.png",
+            "./assets/images/logo/light-chevron_2.png",
+            "./assets/images/logo/light-chevron_3.png",
+            "./assets/images/logo/light-chevron_4.png",
+            "./assets/images/logo/light-chevron_5.png",
+            "./assets/images/logo/light-chevron_6.png",
+            "./assets/images/logo/dark-chevron.png",
+            "./assets/images/logo/dark-chevron_1.png",
+            "./assets/images/logo/dark-chevron_2.png",
+            "./assets/images/logo/dark-chevron_3.png",
+            "./assets/images/logo/dark-chevron_4.png",
+            "./assets/images/logo/dark-chevron_5.png",
+            "./assets/images/logo/dark-chevron_6.png"
+          ]
         }
       ]
     ],

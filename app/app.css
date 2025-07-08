@@ -8,7 +8,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
 }
-
+@font-face {
+  font-family: 'SpaceMono Regular';
+  src: url('/assets/fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Zapfino';
+  src: url('/assets/fonts/Zapfino.ttf') format('truetype');
+}
 .next-steps .fa-link {
   margin-right: 5px;
 }

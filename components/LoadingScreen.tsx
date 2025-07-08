@@ -1,9 +1,7 @@
-import { Colors } from '@/constants/Colors'
 import * as React from 'react'
-import { ActivityIndicator, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { ThemedText } from './ThemedText'
 import { ThemedView } from './ThemedView'
-import { IconSymbol } from './ui/IconSymbol'
 import { StackedLogoAnimation } from './StackedLogoAnimation'
 
 const styles = StyleSheet.create({

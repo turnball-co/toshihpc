@@ -22,6 +22,16 @@ module.exports = function (api) {
             '@': '.'
           }
         }
+      ],
+      'react-native-classname-to-style',
+      [
+        'react-native-platform-specific-extensions',
+        {
+          extensions: [
+            'scss',
+            'sass'
+          ]
+        }
       ]
     ],
     ignore: [
@@ -35,8 +45,18 @@ module.exports = function (api) {
         ],
         presets: [
           'babel-preset-expo'
-            ],
+        ],
         plugins: [
+          'react-native-classname-to-style',
+          [
+            'react-native-platform-specific-extensions',
+            {
+              extensions: [
+                'scss',
+                'sass'
+              ]
+            }
+          ]
         ]
       }
     ]
