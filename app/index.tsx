@@ -1,8 +1,13 @@
 import { LoadingScreen } from '@/components/LoadingScreen'
 import { Redirect } from 'expo-router'
 import * as React from 'react'
+import { Platform } from 'react-native'
 import { useAuth } from './context/AuthContext'
-import './index.css'
+
+// Only import CSS on web platform
+if (Platform.OS === 'web') {
+  require('./index.css')
+}
 
 export default function Index() {
   const { loading } = useAuth()

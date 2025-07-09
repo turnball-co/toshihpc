@@ -10,14 +10,18 @@ import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import * as React from 'react'
 import { useEffect } from 'react'
+import { Platform } from 'react-native'
 import 'react-native-gesture-handler'
 import 'react-native-reanimated'
-import './app.css'
 import { ModalProvider } from './context/ModalContext'
-import { Platform } from 'react-native'
+
+// Only import CSS on web platform
+if (Platform.OS === 'web') {
+  require('./app.css')
+}
 
 if (Platform.OS === 'web') {
-  global._frameTimestamp = null
+  ;(global as any)._frameTimestamp = null
 }
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.

@@ -1,0 +1,2 @@
+shelljob.sh
+exec "$@"

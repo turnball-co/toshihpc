@@ -23,16 +23,9 @@ module.exports = function (api) {
           }
         }
       ],
-      'react-native-classname-to-style',
-      [
-        'react-native-platform-specific-extensions',
-        {
-          extensions: [
-            'scss',
-            'sass'
-          ]
-        }
-      ]
+      'babel-plugin-react-native-classname-to-style',
+      'babel-plugin-react-native-platform-specific-extensions',
+      'react-native-reanimated'
     ],
     ignore: [
       'node_modules/(?!(expo.*|@expo.*|react-native.*|@react-native.*|@react-navigation.*)/.*)'
@@ -47,16 +40,9 @@ module.exports = function (api) {
           'babel-preset-expo'
         ],
         plugins: [
-          'react-native-classname-to-style',
-          [
-            'react-native-platform-specific-extensions',
-            {
-              extensions: [
-                'scss',
-                'sass'
-              ]
-            }
-          ]
+          'babel-plugin-react-native-classname-to-style',
+          'babel-plugin-react-native-platform-specific-extensions',
+          'react-native-reanimated'
         ]
       }
     ]
