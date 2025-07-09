@@ -3,18 +3,18 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
-const darkBgColorLight = ' #ffffff'
-const darkBgColorDark = ' #151718'
-const lightBgColorLight = ' #ffffff'
+const darkBgColorLight = ' #075031'
+const darkBgColorDark = ' #035151'
+const lightBgColorLight = ' #075031'
 const lightBgColorDark = ' #151718'
 const darkTntColorLight = ' #08887d'
-const darkTntColorDark = ' #ffffff'
+const darkTntColorDark = ' #043f1b'
 const lightTntColorLight = ' #08887d'
-const lightTntColorDark = ' #ffffff'
+const lightTntColorDark = ' #075031'
 
 export const Colors = {
   light: {
-    text: '#11181C',
+    text: ' #0b778c',
     background: lightBgColorLight,
     tint: lightTntColorLight,
     icon: '#687076',
@@ -22,7 +22,7 @@ export const Colors = {
     tabIconSelected: lightTntColorLight
   },
   dark: {
-    text: '#ECEDEE',
+    text: ' #0b778c',
     background: darkBgColorDark,
     tint: darkTntColorDark,
     icon: '#9BA1A6',
@@ -33,13 +33,11 @@ export const Colors = {
     backgroundUrl: '/assets/images/swirl.png'
   },
   primary: {
-    // Primary color for the app, buttons, links, etc.
     background: '#0A7EA4',
     text: '#72a6a2',
     border: '#72a6a2'
   },
   secondary: {
-    // Secondary color for the app, buttons, links, etc. -- call to actions (CTAs)
     background: '#A4300A',
     text: '#001c1d',
     border: '#001c1d'

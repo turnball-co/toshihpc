@@ -38,8 +38,7 @@ const styles = StyleSheet.create({
       height: 4
     },
     textShadowRadius: 6,
-    shadowOpacity: 0.6,
-    color: Colors.light.tabIconSelected
+    color: Colors.light.text
   },
   logotoshi: {
     fontFamily: 'Zapfino',
@@ -54,97 +53,72 @@ const styles = StyleSheet.create({
   }
 })
 
-const LogoCommonProps = {
-  transition: {
-    type: 'timing',
-    duration: 1000
-  },
-  position: 'absolute',
-  top: 0,
-  right: 0,
-  radius: 'round',
-  height: 158,
-  width: 134
-} as const
 
-function ChevronLogo({ key, src }: { key: any, src: string }) {
+
+function ChevronLogo({ keyValue, src, style }: { keyValue: number, src: any, style?: any }) {
   return (
-    <View
+    <MotiImage
+      key={keyValue}
+      source={src}
       from={{
-        opacity: 0,
-        scale: 0.9,
+        opacity: 0
       }}
       animate={{
-        opacity: 1,
-        scale: 1,
+        opacity: 1
       }}
-      exit={{
-        opacity: 0,
-        scale: 0.9,
+      transition={{
+        type: 'spring',
+        duration: 1500,
+        delay: (keyValue + 1) * 577
       }}
-      exitTransition={{
-        type: 'timing',
-        duration: 2500,
-      }}
-    >
-      <MotiImage
-        key={key}
-        source={{ uri: src }}
-        style={styles.logoPad}
-        {...LogoCommonProps}
-      />
-    </View>
-  );
+      style={[style, {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        height: 158,
+        width: 134,
+        zIndex: keyValue + 1
+      }]}
+    />
+  )
 }
 
 function collectLogos( colorMode: string ) {
   return {
     images: [
-      '@/assets/images/logo/' + colorMode + '-chevron_1.png',
-      '@/assets/images/logo/' + colorMode + '-chevron_2.png',
-      '@/assets/images/logo/' + colorMode + '-chevron_3.png',
-      '@/assets/images/logo/' + colorMode + '-chevron_4.png',
-      '@/assets/images/logo/' + colorMode + '-chevron_5.png',
-      '@/assets/images/logo/' + colorMode + '-chevron_6.png'
-    ],
-    imagesLogo: '@/assets/images/logo/' + colorMode + '-chevron.png'
+      `../assets/images/logo/${colorMode}-chevron_1.png`,
+      `../assets/images/logo/${colorMode}-chevron_2.png`,
+      `../assets/images/logo/${colorMode}-chevron_3.png`,
+      `../assets/images/logo/${colorMode}-chevron_4.png`,
+      `../assets/images/logo/${colorMode}-chevron_5.png`,
+      `../assets/images/logo/${colorMode}-chevron_6.png`
+    ]
   }
 }
 
 export const StackedLogoAnimation = () => {
   const isValid = useSharedValue(true)
   const translateY = useDerivedValue(() => (isValid.value ? 0 : -10))
-
+  const colorScheme = useColorScheme()
   const [dark, toggle] = useReducer((s) => !s, true)
   const colorMode = dark ? 'dark' : 'light'
-  const { images, imagesLogo } = collectLogos(colorMode)
+  const { images } = collectLogos(colorMode)
 
   return (
     <AnimatePresence>
       <MotiView
-        style={[styles.container]}
-        animate={{ backgroundColor: !dark ?  Colors.dark.background : Colors.light.background  }}
-        transition={{
-          type: 'timing',
-          duration: 300,
-          translateY: {
-            type: 'spring',
-            mass: 0.5,
-            damping: 10,
-            stiffness: 100
-          },
-        }}>
+        style={[styles.container]}>
         <MotiView key={'imagesLogo'} style={styles.chevron}>
           {images.map((image, index) => (
-            <ChevronLogo key={index} src={image} />
+            <ChevronLogo
+              key={index}
+              keyValue={index}
+              src={image} 
+              style={styles.logoPad} />
           ))}
-          <MotiImage
-            style={styles.logoPad}
-            source={{ uri: imagesLogo }}
-            {...LogoCommonProps} />
         </MotiView>
-        <MotiText style={{...styles.logoText,...styles.logotoshi}}>Toshi</MotiText>
-        <MotiText style={{...styles.logoText,...styles.logohpc}}>HPC</MotiText>
+        <MotiText style={{...styles.logoText, ...styles.logotoshi}}>Toshi</MotiText>
+        <MotiText style={{...styles.logoText, ...styles.logohpc}}>HPC</MotiText>
       </MotiView>
     </AnimatePresence>
   )

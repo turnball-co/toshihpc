@@ -26,7 +26,8 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          use: ['babel-loader', 'astroturf/loader']        }
+          use: ['babel-loader', 'astroturf/loader']
+        }
       }
     ]
   }
