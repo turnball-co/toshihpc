@@ -48,14 +48,16 @@ const styles = StyleSheet.create({
   logohpc: {
     fontFamily: 'SpaceMono Regular',
     marginLeft: 36,
-    marginTop: -36,
-    fontSize: 84
+    marginTop: -28,
+    fontSize: 128,
+    fontStyle: 'italic'
   }
 })
 
 
 
 function ChevronLogo({ keyValue, src, style }: { keyValue: number, src: any, style?: any }) {
+
   return (
     <MotiImage
       key={keyValue}
@@ -103,12 +105,28 @@ export const StackedLogoAnimation = () => {
   const [dark, toggle] = useReducer((s) => !s, true)
   const colorMode = dark ? 'dark' : 'light'
   const { images } = collectLogos(colorMode)
-
+  const exitAnimate = {
+      from: {
+        rotate: "0deg"
+      },
+      animate: {
+        rotate: "360deg"
+      },
+      transition: {
+        loop: true,
+        repeatReverse: false,
+        type: "timing",
+        delay: 4500,
+        duration: 2500
+      }
+  }
+  
   return (
     <AnimatePresence>
       <MotiView
         style={[styles.container]}>
-        <MotiView key={'imagesLogo'} style={styles.chevron}>
+        {/* @ts-ignore */}
+        <MotiView key={'imagesLogo'} style={styles.chevron} {...exitAnimate}>
           {images.map((image, index) => (
             <ChevronLogo
               key={index}
