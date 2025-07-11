@@ -29,7 +29,6 @@ export function LoadingScreen() {
     <ThemedView style={styles.container}>
       <ThemedView style={styles.content}>
         <StackedLogoAnimation />
-        <ThemedText style={styles.text}>Loading...</ThemedText>
       </ThemedView>
     </ThemedView>
   )

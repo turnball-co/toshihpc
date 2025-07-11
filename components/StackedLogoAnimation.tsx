@@ -1,10 +1,10 @@
 import { Colors } from '@/constants/Colors'
 import { useColorScheme } from '@/hooks/useColorScheme'
-import { AnimatePresence, MotiImage, MotiText, MotiView, View } from 'moti'
+import { AnimatePresence, MotiImage, MotiText, MotiView } from 'moti'
 import * as React from 'react'
-import { useReducer } from 'react'
-import { StyleSheet } from 'react-native'
-import { useDerivedValue, useSharedValue } from 'react-native-reanimated'
+import { useReducer, useState } from 'react'
+import { Animated, Easing, StyleSheet } from 'react-native'
+import { useSharedValue } from 'react-native-reanimated'
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   chevron: {
     position: 'absolute',
-    top: -68,
+    top: -48,
     left: -128,
     width: 134,
     height: 158,
@@ -44,17 +44,16 @@ const styles = StyleSheet.create({
     fontFamily: 'Zapfino',
     fontSize: 64,
     lineHeight: 72,
+    fontStyle: 'italic'
   },
   logohpc: {
     fontFamily: 'SpaceMono Regular',
     marginLeft: 36,
-    marginTop: -28,
+    marginTop: -64,
     fontSize: 128,
     fontStyle: 'italic'
   }
 })
-
-
 
 function ChevronLogo({ keyValue, src, style }: { keyValue: number, src: any, style?: any }) {
 
@@ -99,25 +98,47 @@ function collectLogos( colorMode: string ) {
 }
 
 export const StackedLogoAnimation = () => {
-  const isValid = useSharedValue(true)
-  const translateY = useDerivedValue(() => (isValid.value ? 0 : -10))
+  const isScale = useSharedValue(true)
+  const isTravelX = useSharedValue(true)
+  const isTravelY = useSharedValue(true)
   const colorScheme = useColorScheme()
   const [dark, toggle] = useReducer((s) => !s, true)
   const colorMode = dark ? 'dark' : 'light'
   const { images } = collectLogos(colorMode)
-  const exitAnimate = {
-      from: {
-        rotate: "0deg"
-      },
-      animate: {
-        rotate: "360deg"
-      },
-      transition: {
-        loop: true,
-        repeatReverse: false,
-        type: "timing",
-        delay: 4500,
-        duration: 2500
+
+  const [spinValue, setSpinValue] = useState(new Animated.Value(0))
+  const moveX = 150
+  const moveY = 90
+
+  const spin = spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["0deg", "360deg"],
+  })
+
+  const translateX = 0
+  const translateY = 0
+  const curX = 0
+  const curY = 0
+  const aniMe = {
+    from: {
+      rotate: "0deg"
+    },
+    animate: {
+      rotate: "360deg"
+    },
+    transition: {
+      toValue: 1,
+      delay: 3950,
+      duration: 2120,
+      loop: true,
+      repeatReverse: false,
+      type: 'timing',
+      easing: Easing.linear,
+      transform: [{
+        delay: 4000,
+        translateX: curX + moveX > 150 ? curX + moveX : moveX,
+        translateY: curY + moveY > 90 ? curY + moveY : moveY,
+      }],
       }
   }
   
@@ -126,7 +147,7 @@ export const StackedLogoAnimation = () => {
       <MotiView
         style={[styles.container]}>
         {/* @ts-ignore */}
-        <MotiView key={'imagesLogo'} style={styles.chevron} {...exitAnimate}>
+        <MotiView key={'imagesLogo'} style={styles.chevron} {...aniMe}>
           {images.map((image, index) => (
             <ChevronLogo
               key={index}
