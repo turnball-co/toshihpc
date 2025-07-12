@@ -2,9 +2,8 @@
 node_modules/
 *.log
 
-.yarn
-.expo
-.expo-shared
+.yarn*
+.expo*
 web-build/
 dist/
 coverage/
