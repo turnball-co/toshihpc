@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
   },
   chevron: {
     position: 'absolute',
-//    top: -48,
-    left: -8,
+    top: -48,
+    left: -126,
     width: 134,
     height: 158,
     zIndex: 99
@@ -128,12 +128,12 @@ export const StackedLogoAnimation = () => {
     const centerY = 0
     const radius = 200
     
-    // Phase 1: Circle around the text (figure-8 pattern)
+    // Phase 1: Circle around the text (figure-8 pattern) cubic-bezier(0.18,0.89,0.32,1.27);
     chevronX.value = withSequence(
       // Move right and up
-      withTiming(centerX + radius, { duration: 800, easing: Easing.bezier(0.25, 0.46, 0.45, 0.94) }),
+      withTiming(centerX + radius, { duration: 800, easing: Easing.bezier(0.18, 0.89, 0.32, 1.27) }),
       // Circle over the top
-      withTiming(centerX - radius, { duration: 1000, easing: Easing.bezier(0.25, 0.46, 0.45, 0.94) }),
+      withTiming(centerX - radius, { duration: 1000, easing: Easing.bezier(0.69, 1.05, 0.9, 0.3) }),
       // Move under and around
       withTiming(centerX + radius, { duration: 1000, easing: Easing.bezier(0.25, 0.46, 0.45, 0.94) }),
       // Return to start position
@@ -218,24 +218,6 @@ export const StackedLogoAnimation = () => {
   // Animated styles using Reanimated
   const chevronAnimatedStyle = useAnimatedStyle(() => {
     return {
-      from: {
-        rotate: '0deg'
-      },
-      animate: {
-        rotate: '360deg'
-      },
-    transition: {
-      toValue: 1,
-      delay: 3950,
-      duration: 2120,
-      loop: true,
-      repeatReverse: false,
-      type: 'timing',
-      easing: Easing.linear,
-      onFinish: () => {
-        runOnJS(setAnimationPhase)('complete')
-      }
-    },
       transform: [
         { translateX: chevronX.value },
         { translateY: chevronY.value },
@@ -303,7 +285,7 @@ export const StackedLogoAnimation = () => {
         <MotiView style={[styles.container, containerAnimatedStyle]}>
           <MotiView
             key={'imagesLogo'}
-            style={[styles.chevron, chevronAnimatedStyle]}>
+            style={[styles.chevron, chevronAnimatedStyle]} {...aniMe}>
             {images.map((image, index) => (
               <ChevronLogo
                 key={index}
