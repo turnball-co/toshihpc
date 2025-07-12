@@ -3,9 +3,9 @@
     "name": "toshihpc",
     "slug": "toshihpc",
     "scheme": "toshihpc",
-    "version": "0.9.2",
+    "version": "0.9.3",
     "orientation": "portrait",
-    "icon": "./images/icon.png",
+    "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -23,16 +23,16 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "backgroundImage": "./images/swirl.png",
-      "favicon": "./images/favicon.png"
+      "backgroundImage": "./assets/images/swirl.png",
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "/assets/images/splash-icon.png",
-          "backgroundImage": "/assets/images/swirl.png",
+          "image": "./assets/images/logo/dark-chevron.png",
+          "backgroundImage": "./assets/images/swirl.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"

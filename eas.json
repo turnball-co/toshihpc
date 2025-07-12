@@ -4,12 +4,11 @@
       "node": "20.19.1",
       "yarn": "4.9.1",
       "env": {
-        "EXAMPLE_ENV": "example value"
-      },
-      "android": {
-        "image": "default",
-        "env": {
-          "PLATFORM": "android"
+        "android": {
+          "image": "default",
+          "env": {
+            "PLATFORM": "android"
+          }
         }
       },
       "ios": {
@@ -23,7 +22,19 @@
       "extends": "base",
       "developmentClient": true,
       "env": {
-        "ENVIRONMENT": "development"
+        "ENVIRONMENT": "development",
+        "GOOGLE_CLIENT_ID": "108772082935232697871",
+        "GOOGLE_CLIENT_SECRET": "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",
+        "GOOGLE_REDIRECT_URI": "http://localhost:3000/auth/google/callback",
+        "MONGODB_URI": "mongodb://localhost:27017/toshihpc",
+        "SESSION_SECRET": "your_session_secret",
+        "SESSION_NAME": "your_session_name",
+        "SESSION_COOKIE_MAX_AGE": "3600000",
+        "JWT_SECRET": "your_jwt_secret",
+        "ENV": "dev",
+        "NODE_ENV": "dev",
+        "EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_test_51RI2wqPpxFqfcpuWSnEvKKSB2fkHR5PUbHBGDuaVvm6PTvIdrUG2QLwYUcT5K8wZ3oY438HInR8lFBimT7AT4CWv006NWS9yBD",
+        "BACKEND_API": "https://localhost:8081/"
       },
       "android": {
         "distribution": "internal",
@@ -36,7 +47,19 @@
     "staging": {
       "extends": "base",
       "env": {
-        "ENVIRONMENT": "staging"
+        "ENVIRONMENT": "staging",
+        "GOOGLE_CLIENT_ID": "108772082935232697871",
+        "GOOGLE_CLIENT_SECRET": "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",
+        "GOOGLE_REDIRECT_URI": "http://localhost:3000/auth/google/callback",
+        "MONGODB_URI": "mongodb://staging.mongo.toshihpc.com:27017/toshihpc",
+        "SESSION_SECRET": "your_session_secret",
+        "SESSION_NAME": "your_session_name",
+        "SESSION_COOKIE_MAX_AGE": "3600000",
+        "JWT_SECRET": "your_jwt_secret",
+        "ENV": "staging",
+        "NODE_ENV": "staging",
+        "EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_test_51RI2wqPpxFqfcpuWSnEvKKSB2fkHR5PUbHBGDuaVvm6PTvIdrUG2QLwYUcT5K8wZ3oY438HInR8lFBimT7AT4CWv006NWS9yBD",
+        "BACKEND_API": "https://api.staging.toshihpc.com/"
       },
       "distribution": "internal",
       "android": {
@@ -46,7 +69,19 @@
     "production": {
       "extends": "base",
       "env": {
-        "ENVIRONMENT": "production"
+        "ENVIRONMENT": "production",
+        "GOOGLE_CLIENT_ID": "108772082935232697871",
+        "GOOGLE_CLIENT_SECRET": "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",
+        "GOOGLE_REDIRECT_URI": "http://localhost:3000/auth/google/callback",
+        "MONGODB_URI": "mongodb://mongo.toshihpc.com:27017/toshihpc",
+        "SESSION_SECRET": "your_session_secret",
+        "SESSION_NAME": "your_session_name",
+        "SESSION_COOKIE_MAX_AGE": "3600000",
+        "JWT_SECRET": "your_jwt_secret",
+        "ENV": "prod",
+        "NODE_ENV": "production",
+        "EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_test_51RI2wqPpxFqfcpuWSnEvKKSB2fkHR5PUbHBGDuaVvm6PTvIdrUG2QLwYUcT5K8wZ3oY438HInR8lFBimT7AT4CWv006NWS9yBD",
+        "BACKEND_API": "https://api.toshihpc.com/"
       }
     }
   }

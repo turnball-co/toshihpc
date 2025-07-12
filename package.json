@@ -1,7 +1,28 @@
 {
   "name": "toshihpc",
   "main": "expo-router/entry",
-  "version": "0.9.2",
+  "version": "0.9.3",
+  "author": {
+    "name": "Ben Turner",
+    "email": "ben@turnball.co",
+    "company": "Dotjock LLC",
+    "url": "https://turnball.co"
+  },
+  "keywords": [
+    "high performance computing",
+    "hpc",
+    "llm",
+    "ai",
+    "artificial intelligence",
+    "private llm",
+    "private ai",
+    "private artificial intelligence",
+    "subscription",
+    "saas",
+    "software as a service"
+  ],
+  "license": "ISC",
+  "description": "Package containing ecommerce site to subscribe to high performance computing services for the proper care and feeding of private LLM and AI services.",
   "scripts": {
     "stack": "clear; rm -rf node_modules; touch yarn.lock; rm -rf .expo; rm -rf web-build; yarn cache clean; yarn install; watchman watch-del . ; watchman watch-project .; yarn start",
     "start": "expo start --web --clear",
@@ -132,7 +153,8 @@
     }
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.0.0 <22.0.0",
+    "yarn": ">=4.0.0 <5.0.0"
   },
   "private": true,
   "packageManager": "yarn@4.9.2"
