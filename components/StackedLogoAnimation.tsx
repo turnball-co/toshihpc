@@ -126,12 +126,12 @@ export const StackedLogoAnimation = () => {
     'worklet'
     const centerX = 0
     const centerY = 0
-    const radius = 200
-    
+    const radius = 500
+    console.log('stats', screenHeight, screenWidth, centerX, centerY, radius )
     // Phase 1: Circle around the text (figure-8 pattern) cubic-bezier(0.18,0.89,0.32,1.27);
     chevronX.value = withSequence(
       // Move right and up
-      withTiming(centerX + radius, { duration: 800, easing: Easing.bezier(0.18, 0.89, 0.32, 1.27) }),
+      withTiming(centerX + radius, { duration: 800, easing: Easing.bezier(0.99, 0.81, 0.7, 0.6) }),
       // Circle over the top
       withTiming(centerX - radius, { duration: 1000, easing: Easing.bezier(0.69, 1.05, 0.9, 0.3) }),
       // Move under and around
@@ -259,16 +259,12 @@ export const StackedLogoAnimation = () => {
       rotate: '360deg'
     },
     transition: {
-      toValue: 1,
+      type: "timing",
       delay: 3950,
       duration: 2120,
       loop: true,
       repeatReverse: false,
-      type: 'timing',
-      easing: Easing.linear,
-      onFinish: () => {
-        runOnJS(setAnimationPhase)('complete')
-      }
+      easing: Easing.linear
     }
   }
 
@@ -283,6 +279,7 @@ export const StackedLogoAnimation = () => {
       }}>
       <AnimatePresence>
         <MotiView style={[styles.container, containerAnimatedStyle]}>
+          {/* @ts-ignore */}
           <MotiView
             key={'imagesLogo'}
             style={[styles.chevron, chevronAnimatedStyle]} {...aniMe}>
